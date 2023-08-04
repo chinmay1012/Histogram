@@ -1,0 +1,655 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+import numpy as np
+
+plt.style.use('ggplot')
+data=pd.read_csv(r'E:\Masters\Studies\Semester 3\Thesis Work\Hahn Automation\Cycle time csv\Instructions_CSV.csv')
+plt.figure(figsize=(12, 5))
+
+def ADD():
+    plt.subplot(2, 2, 1)
+    Runtime = data['ADD1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('ADD Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['ADD2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('ADD Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['ADD3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('ADD Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['ADD4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('ADD Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+ADD()
+
+def SUB1():
+    plt.subplot(2, 2, 1)
+    Runtime = data['SUB1_mms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['SUB2_mms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['SUB3_mms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['SUB4_mms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+SUB1()
+
+def Mul():
+    plt.subplot(2, 2, 1)
+    Runtime = data['Mul1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('Multiplication Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['Mul2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('Multiplication Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['Mul3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('Multiplication Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['Mul4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('Multiplication Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+Mul()
+
+def Div():
+    plt.subplot(2, 2, 1)
+    Runtime = data['Div1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('Division Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['Div2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('Division Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['Div3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('Division Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['Div4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('Division Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+Div()
+
+def Timer():
+    plt.subplot(2, 2, 1)
+    Runtime = data['Timer1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('Timer Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['Timer2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('Timer Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['Timer3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('Timer Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['Timer4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('Timer Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+Timer()
+
+def Counter():
+    plt.subplot(2, 2, 1)
+    Runtime = data['Counter1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('Counter Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['Counter2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('Counter Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['Counter3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('Counter Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['Counter4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02, 0.04, 0.06]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('Counter Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+Counter()
+
+def EQl():
+    plt.subplot(2, 2, 1)
+    Runtime = data['EQL1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['EQL2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['EQL3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['EQL4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+EQl()
+
+def NOT_EQl():
+    plt.subplot(2, 2, 1)
+    Runtime = data['NOT_EQL1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('NOT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['NOT_EQL2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('NOT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['NOT_EQL3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('NOT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['NOT_EQL4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('NOT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+NOT_EQl()
+
+def GQT_EQl():
+    plt.subplot(2, 2, 1)
+    Runtime = data['GQT_EQL1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('GQT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['GQT_EQL2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('GQT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['GQT_EQL3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('GQT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['GQT_EQL4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('GQT EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+GQT_EQl()
+
+def LESS_EQl():
+    plt.subplot(2, 2, 1)
+    Runtime = data['LESS_EQL1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('LESS EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['LESS_EQL2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('LESS EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['LESS_EQL3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('LESS EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['LESS_EQL4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('LESS EQl Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+LESS_EQl()
+
+def ADD_Traces_Group():
+    plt.subplot(2, 2, 1)
+    Runtime = data['ADD1_Group_mms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('ADD1_Group_ms')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['ADD2_Group_mms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('ADD2_Group_ms')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['ADD3_Group_mms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('ADD3_Group_ms')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['ADD4_Group_mms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('ADD4_Group_ms')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+ADD_Traces_Group()
+
+def SUB():
+    plt.subplot(2, 2, 1)
+    Runtime = data['SUB1_ms']
+    bins = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples = 32767
+    relative_freqs = np.histogram(Runtime, bins=bins)[0] / total_samples * 100
+    weights = np.ones_like(Runtime) / len(Runtime) * 100
+    plt.hist(Runtime, bins=bins, edgecolor = "black", color = "red", weights=np.ones_like(Runtime) / total_samples * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+
+    plt.subplot(2, 2, 2)
+    Runtime1 = data['SUB2_ms']
+    bins1 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples1 = 32767
+    relative_freqs = np.histogram(Runtime1, bins=bins1)[0] / total_samples1 * 100
+    weights = np.ones_like(Runtime1) / len(Runtime1) * 100
+    plt.hist(Runtime1, edgecolor="black", bins=bins1, color="Blue", weights=np.ones_like(Runtime1) / total_samples1 * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 3)
+    Runtime2 = data['SUB3_ms']
+    bins2 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples2 = 32767
+    relative_freqs = np.histogram(Runtime2, bins=bins2)[0] / total_samples2 * 100
+    weights = np.ones_like(Runtime2) / len(Runtime2) * 100
+    plt.hist(Runtime2, edgecolor="black", bins=bins2, color="Green", weights=np.ones_like(Runtime2) / total_samples2 * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.subplot(2, 2, 4)
+    Runtime3 = data['SUB4_ms']
+    bins3 = [0.001, 0.002, 0.003, 0.004, 0.006, 0.008, 0.010, 0.012, 0.014, 0.016, 0.018, 0.02,]
+    total_samples3 = 32766
+    relative_freqs = np.histogram(Runtime3, bins=bins3)[0] / total_samples3 * 100
+    weights = np.ones_like(Runtime3) / len(Runtime3) * 100
+    plt.hist(Runtime3, edgecolor="black", bins=bins3, color="yellow", weights=np.ones_like(Runtime3) / total_samples3 * 100, density=False)
+    plt.title('Subtract Instruction')
+    plt.xlabel('t / ms')
+    plt.gca().set_ylabel('f / %')
+    plt.ylim(0, 100)
+
+    plt.tight_layout()
+    plt.show()
+SUB()
